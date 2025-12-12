@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | Planning Permission</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Theme CSS (copied from main site) -->
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --secondary-yellow: #ffc107;
+            --light-blue: #e3f2fd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .bg-primary-blue { background-color: var(--primary-blue); }
+        .bg-secondary-yellow { background-color: var(--secondary-yellow); }
+        .bg-light-blue { background-color: var(--light-blue); }
+        .text-primary-blue { color: var(--primary-blue); }
+        .text-secondary-yellow { color: var(--secondary-yellow); }
+
+        .navbar { box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+        .logo { width: 100px; }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #FFD700;
+        }
+
+        .navbar .dropdown:hover .dropdown-menu { display: block; }
+        .navbar .dropdown-toggle::after { display: none; }
+
+        .news-hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.75), rgba(0, 86, 179, 0.75)),
+                        url('img/hall6.jpg') center/cover no-repeat;
+            color: white;
+            padding: 120px 0;
+        }
+
+        .news-content img {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/logo.png" alt="Club Logo" class="logo">
+            <span class="fw-bold ms-2"></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="handball.html">Handball</a></li>
+                <li class="nav-item"><a class="nav-link" href="racquetball.html">Racquetball</a></li>
+                <li class="nav-item"><a class="nav-link active" href="news.html">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button">About</a>
+                    <ul class="dropdown-menu bg-primary-blue border-0" aria-labelledby="aboutDropdown">
+                        
+                     <li><a class="dropdown-item" href="lotto.html">Club Lotto</a></li>
+                    
+                    <li><a class="dropdown-item" href="facilities.html">Facilities</a></li>
+
+                    <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- News Header -->
+<section class="news-hero text-center">
+    <div class="container">
+        <h1 class="display-5 fw-bold">Planning Permission Application</h1>
+        <p class="lead">Dec 12, 2025</p>
+    </div>
+</section>
+
+<!-- News Content -->
+<section class="py-5">
+    <div class="container news-content">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <!-- FEATURE IMAGE -->
+                <img src="news-images/planning-permission.jpg" alt="News Image"> </br>
+
+                <!-- ARTICLE BODY -->
+                <p class="text-muted mb-4">Posted on Dec 12, 2025</p>
+
+                <h2 class="fw-bold text-primary-blue mb-3">Ambitious Times Ahead</h2>
+                <p>The Handball Club is seeking planning permission to extend its existing single-court facility to a modern, three-court complex that will better serve the growing membership and the wider community. The proposed development includes two additional handball halls and an upper-floor extension featuring a viewing area, meeting space, and kitchen facilities. This upgrade will provide improved opportunities for training, competition, and community events, ensuring the club can continue to promote handball and support local sporting activity for many years to come.</p>
+
+            
+
+                <!-- OPTIONAL GALLERY -->
+                <div class="row g-3 my-4">
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+
+                <!-- BACK BUTTON -->
+                <a href="news.html" class="btn btn-primary mt-4">← Back to News</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-uppercase text-secondary-yellow mb-4">Carrick-on-Suir Handball Club</h5>
+                <p>Clonmel Rd<br>Carrick-on-Suir<br>Co Tipperary<br>Email: info@handball.com</p>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-uppercase text-secondary-yellow mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white">Home</a></li>
+                    <li><a href="news.html" class="text-white">News</a></li>
+                    <li><a href="book-court.html" class="text-white">Book Court</a></li>
+                    <li><a href="about.html" class="text-white">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-uppercase text-secondary-yellow mb-4">Opening Hours</h5>
+                <ul class="list-unstyled">
+                    <li>Mon–Fri: 6am–10pm</li>
+                    <li>Sat: 7am–9pm</li>
+                    <li>Sun: 8am–8pm</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="my-4 bg-light">
+        <p class="mb-0 text-center">&copy; Carrick-on-Suir Handball Club. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

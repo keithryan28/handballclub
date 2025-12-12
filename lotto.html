@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Lotto | Carrick-on-Suir Handball Club</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Site Theme CSS (same as main site) -->
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --secondary-yellow: #ffc107;
+            --light-blue: #e3f2fd;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        .bg-primary-blue { background-color: var(--primary-blue); }
+        .bg-secondary-yellow { background-color: var(--secondary-yellow); }
+        .bg-light-blue { background-color: var(--light-blue); }
+        .text-primary-blue { color: var(--primary-blue); }
+        .text-secondary-yellow { color: var(--secondary-yellow); }
+
+        .navbar { box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+        .logo { width: 100px; }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #FFD700;
+        }
+
+        .navbar .dropdown:hover .dropdown-menu { display: block; }
+        .navbar .dropdown-toggle::after { display: none; }
+
+        .lotto-hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.75), rgba(0, 86, 179, 0.75)),
+                        url('img/hall3.jpg') center/cover no-repeat;
+            color: white;
+            padding: 120px 0;
+        }
+
+        .winner-card {
+            border-left: 5px solid var(--secondary-yellow);
+        }
+        /* Make dropdown links white */
+.dropdown-menu .dropdown-item {
+    color: white !important;
+}
+
+/* Keep background blue on hover and text white */
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
+}
+
+/* Ensure dropdown menu background matches nav */
+.dropdown-menu {
+    background-color: var(--primary-blue) !important;
+    border: none;
+}
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="img/logo.png" alt="Club Logo" class="logo">
+            <span class="fw-bold"></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link " href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="handball.html">Handball</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="racquetball.html">Racquetball</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="news.html">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="membership.html">Membership</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button">
+                        About
+                    </a>
+                    <ul class="dropdown-menu bg-primary-blue border-0" aria-labelledby="aboutDropdown">
+                        
+                     <li><a class="dropdown-item" href="lotto.html" class="active">Club Lotto</a></li>
+                    
+                    <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="lotto-hero text-center">
+    <div class="container">
+        <h1 class="display-5 fw-bold">Club Lotto</h1>
+        <p class="lead">Supporting the future of Carrick-on-Suir Handball Club</p>
+
+         <!-- New Button to Lotto Entry Section -->
+        <a href="#revo-section" class="btn btn-lg bg-secondary-yellow text-dark fw-bold px-4 py-2">
+            Enter Lotto Now
+        </a>
+    </div>
+</section>
+
+<!-- New Lotto Entry Section -->
+<section id="revo-section" class="py-5 bg-light-blue">
+    <div class="container text-center">
+        <h2 class="fw-bold text-primary-blue mb-4">How to Enter the Club Lotto</h2>
+        <p class="lead mb-4">Participate in our bi-weekly draw by scanning the Revo code below. All proceeds go toward supporting the club and its facilities.</p>
+        <img src="img/revo.jpg" alt="Revo Scan Code" class="img-fluid rounded shadow-sm" style="max-width: 300px;">
+        <p class="mt-3 text-muted">Use the Revo app to scan the code and submit your entry. Thank you for your support!</p>
+    </div>
+</section>
+
+<!-- Lotto Information -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 text-center">
+                <h2 class="fw-bold text-primary-blue mb-3">Thank You for Your Support!</h2>
+                <p class="lead">
+                    Our club lotto takes place every <strong>two weeks</strong>, helping raise vital funds 
+                    for the development of our facilities, coaching programmes, and youth initiatives.
+                </p>
+                <p>
+                    We appreciate every ticket purchased—your continued support helps keep our club strong,
+                    growing, and open to the entire community.
+                </p>
+            </div>
+        </div>
+
+        <!-- Previous Winners -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <h3 class="fw-bold text-primary-blue mb-4 text-center">Recent Lotto Winners</h3>
+
+                <!-- Winner List -->
+                <div class="list-group">
+
+                    <div class="list-group-item winner-card py-3">
+                        <h5 class="mb-1 fw-bold">January 12, 2025</h5>
+                        <p class="mb-0">Winner: <strong>John Walsh</strong> • €200</p>
+                    </div>
+
+                    <div class="list-group-item winner-card py-3">
+                        <h5 class="mb-1 fw-bold">December 29, 2024</h5>
+                        <p class="mb-0">Winner: <strong>Mary O’Brien</strong> • €150</p>
+                    </div>
+
+                    <div class="list-group-item winner-card py-3">
+                        <h5 class="mb-1 fw-bold">December 15, 2024</h5>
+                        <p class="mb-0">Winner: <strong>Tom Butler</strong> • €200</p>
+                    </div>
+
+                    <div class="list-group-item winner-card py-3">
+                        <h5 class="mb-1 fw-bold">December 1, 2024</h5>
+                        <p class="mb-0">Winner: <strong>Sarah Kelly</strong> • €125</p>
+                    </div>
+
+                    <div class="list-group-item winner-card py-3">
+                        <h5 class="mb-1 fw-bold">November 17, 2024</h5>
+                        <p class="mb-0">Winner: <strong>Mick Power</strong> • €175</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5" style="background-color: var(--primary-blue); color: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-uppercase text-secondary-yellow mb-4">Carrick-on-Suir Handball Club</h5>
+                <p>Clonmel Rd<br>Carrick-on-Suir<br>Co Tipperary<br>Email: info@handball.com</p>
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-uppercase text-secondary-yellow mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                    <li class="mb-2"><a href="news.html" class="text-white">News</a></li>
+                    <li class="mb-2"><a href="racquetball.html" class="text-white">Racquetball</a></li>
+                    <li class="mb-2"><a href="book-court.html" class="text-white">Book Court</a></li>
+                    <li class="mb-2"><a href="about.html" class="text-white">About</a></li>
+                    <li><a href="contact.html" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-uppercase text-secondary-yellow mb-4">Opening Hours</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">Monday-Friday: 6am - 10pm</li>
+                    <li class="mb-2">Saturday: 7am - 9pm</li>
+                    <li>Sunday: 8am - 8pm</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="my-4 bg-light">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">&copy; Carrick-on-Suir Handball Club. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

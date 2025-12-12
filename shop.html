@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Shop - PowerHandball Club</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --secondary-yellow: #ffc107;
+            --light-blue: #e3f2fd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .bg-primary-blue {
+            background-color: var(--primary-blue);
+        }
+
+        .text-primary-blue {
+            color: var(--primary-blue);
+        }
+
+        .text-secondary-yellow {
+            color: var(--secondary-yellow);
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Remove dropdown arrow */
+        .nav-item.dropdown .nav-link::after {
+            display: none !important;
+        }
+
+        /* Hover to open dropdown */
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
+        }
+
+        /* Dropdown styling */
+        .dropdown-menu {
+            background-color: var(--primary-blue) !important;
+            border: none;
+        }
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+        .dropdown-menu .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            color: white !important;
+        }
+
+        /* Hero section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)),
+                        url('img/clothes.jpg') center/cover no-repeat;
+            color: white;
+            padding: 140px 0;
+            text-align: center;
+        }
+
+        .shop-card img {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .shop-card {
+            transition: 0.3s ease-in-out;
+        }
+        .shop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .logo { width: 100px; }
+        .btn:hover {
+    background-color: var(--secondary-yellow) !important;
+    color: var(--primary-blue) !important;
+}
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/logo.png" class="logo" alt="Club Logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="handball.html">Handball</a></li>
+                <li class="nav-item"><a class="nav-link" href="racquetball.html">Racquetball</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="about.html" id="aboutDropdown">About</a>
+                    <ul class="dropdown-menu bg-primary-blue border-0" aria-labelledby="aboutDropdown">
+                        
+                     <li><a class="dropdown-item" href="lotto.html">Club Lotto</a></li>
+                    
+                    <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+                
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION – ONLINE PERSONALISED GEAR -->
+<section class="hero-section py-5 text-center">
+    <div class="container">
+        <h1 class="fw-bold text-secondary-yellow mb-3">Club Shop</h1>
+        <p class="lead mb-4">Personalised club clothing is available exclusively through our online partner portal.</p>
+        <a href="https://shop.playr-fit.com/colle.../carrick-on-suir-handball" class="btn btn-lg bg-primary-blue text-white fw-bold px-4 py-2"
+           style="transition: all 0.3s ease;" target="_blank">
+            Visit Clothing Portal
+        </a>
+    </div>
+</section>
+
+<!-- SHOP ITEMS -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="fw-bold text-primary-blue text-center mb-5">Equipment Available to Buy</h2>
+
+        <p class="text-center mb-5 text-muted">
+            All items shown below can be purchased directly from club committee members.  
+            <br>Personalised clothing must be ordered through the online portal above.
+        </p>
+
+        <div class="row g-4">
+
+            <!-- Handball Gloves -->
+            <div class="col-md-4">
+                <div class="card shop-card shadow-sm">
+                    <img src="shop-images/gloves.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-primary-blue">Handball Gloves</h5>
+                        <p class="text-muted">High-quality leather gloves for competitive and casual play.</p>
+                        <p class="fw-bold mb-2">€20 per pair</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eye Goggles -->
+            <div class="col-md-4">
+                <div class="card shop-card shadow-sm">
+                    <img src="shop-images/goggles.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-primary-blue">Eye Goggles</h5>
+                        <p class="text-muted">Mandatory safety goggles for all players during matches.</p>
+                        <p class="fw-bold mb-2">€15 per pair</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Handballs -->
+            <div class="col-md-4">
+                <div class="card shop-card shadow-sm">
+                    <img src="shop-images/handball-ball.jpeg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-primary-blue">Handball Balls</h5>
+                        <p class="text-muted">Official competition and training balls available.</p>
+                        <p class="fw-bold mb-2">€10 each</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Racquetball Racquets -->
+            <div class="col-md-4">
+                <div class="card shop-card shadow-sm">
+                    <img src="shop-images/racquet.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-primary-blue">Racquetball Racquets</h5>
+                        <p class="text-muted">Durable and lightweight racquets suitable for all levels.</p>
+                        <p class="fw-bold mb-2">€35 each</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Racquetball Balls -->
+            <div class="col-md-4">
+                <div class="card shop-card shadow-sm">
+                    <img src="shop-images/racquetball.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-primary-blue">Racquetball Balls</h5>
+                        <p class="text-muted">High-bounce balls ideal for matches or practice sessions.</p>
+                        <p class="fw-bold mb-2">€8 per pack</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-5">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-uppercase text-secondary-yellow mb-3">Carrick-on-Suir Handball Club</h5>
+                <p>Clonmel Rd<br>Carrick-on-Suir<br>Co Tipperary<br>Email: info@handball.com</p>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-uppercase text-secondary-yellow mb-3">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white">Home</a></li>
+                    <li><a href="news.html" class="text-white">News</a></li>
+                    <li><a href="racquetball.html" class="text-white">Racquetball</a></li>
+                    <li><a href="book-court.html" class="text-white">Book Court</a></li>
+                    <li><a href="about.html" class="text-white">About</a></li>
+                    <li><a href="contact.html" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-uppercase text-secondary-yellow mb-3">Opening Hours</h5>
+                <ul class="list-unstyled">
+                    <li>Mon–Fri: 6am – 10pm</li>
+                    <li>Saturday: 7am – 9pm</li>
+                    <li>Sunday: 8am – 8pm</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="bg-light">
+        <p class="text-center mb-0">&copy; Carrick-on-Suir Handball Club. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

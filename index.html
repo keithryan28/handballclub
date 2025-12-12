@@ -44,7 +44,7 @@
         
         .hero-section {
             background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), 
-                        url('img/hall1.jpg') no-repeat center center;
+                        url('img/hall6.jpg') no-repeat center center;
             background-size: cover;
             color: white;
             padding: 120px 0;
@@ -63,51 +63,92 @@
         .logo{
             width: 100px;
         }
+            .nav-link.active {
+        position: relative;
+    }
+    .nav-link.active::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #FFD700; /* Thin yellow underline */
+    }
+
+    .dropdown-menu.bg-primary-blue .dropdown-item {
+        color: white;
+    }
+    .dropdown-menu.bg-primary-blue .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    /* Enable dropdown on hover */
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* remove any delay gap */
+}
+
+.navbar .dropdown-toggle::after {
+    display: none; /* optional: remove caret icon */
+}
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue sticky-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="img/logo.png" alt="Club Logo" class="logo">
-                <span class="fw-bold">Handball & Racquetball</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="news.html">News</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="racquetball.html">Racquetball</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="book-court.html">Book Court</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="img/logo.png" alt="Club Logo" class="logo">
+            <span class="fw-bold"></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="handball.html">Handball</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="racquetball.html">Racquetball</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="news.html">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="membership.html">Membership</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown" role="button">
+                        About
+                    </a>
+                    <ul class="dropdown-menu bg-primary-blue border-0" aria-labelledby="aboutDropdown">
+                        
+                     <li><a class="dropdown-item" href="lotto.html">Club Lotto</a></li>
+                    
+                    <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- Hero Section -->
     <section class="hero-section text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Carrick-on-Suir Handball & Racquetball Club</h1>
-            <p class="lead mb-5">Your premier destination for handball and racquetball in the city</p>
-            <a href="join.html#book" class="btn btn-warning btn-lg px-4 me-2">Book a Court</a>
-            <a href="join.html" class="btn btn-outline-light btn-lg px-4">Join Now</a>
+            <h1 class="display-4 fw-bold mb-4">Carrick-on-Suir Handball Club</h1>
+            <p class="lead mb-5">More Than a Game. It’s Who We Are.</p>
+            <a href="membership.html#book" class="btn btn-warning btn-lg px-4 me-2">Book a Court</a>
+            <a href="membership.html" class="btn btn-outline-light btn-lg px-4">Join Now</a>
         </div>
     </section>
 
@@ -121,17 +162,17 @@
                         <div class="card-body">
                             <h5 class="card-title text-primary-blue">Juvenile Training</h5>
                             <p class="card-text">Our certified coaches provide top-notch training for all skill levels, from beginners to advanced players.</p>
-                            <a href="about.html#training" class="btn btn-sm btn-outline-primary">Learn More</a>
+                            <a href="Juvenile-training.html" class="btn btn-sm btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 card-hover border-0 shadow-sm">
-                        <img src="img/hall3.jpg" class="card-img-top" alt="Facilities">
+                        <img src="img/outdoor-court.jpg" class="card-img-top" alt="Facilities">
                         <div class="card-body">
                             <h5 class="card-title text-primary-blue">Facilities</h5>
                             <p class="card-text">Enjoy our indoor and newly installed outdoor courts, locker rooms, fitness area and showers.</p>
-                            <a href="about.html#facilities" class="btn btn-sm btn-outline-primary">View Facilities</a>
+                            <a href="facilities.html" class="btn btn-sm btn-outline-primary">View Facilities</a>
                         </div>
                     </div>
                 </div>
@@ -141,7 +182,7 @@
                         <div class="card-body">
                             <h5 class="card-title text-primary-blue">Community Support</h5>
                             <p class="card-text">Join our friendly community of players who share your passion for handball and racquetball.</p>
-                            <a href="about.html#community" class="btn btn-sm btn-outline-primary">Meet Members</a>
+                            <a href="lotto.html" class="btn btn-sm btn-outline-primary">Play Lotto</a>
                         </div>
                     </div>
                 </div>
@@ -176,25 +217,25 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100 card-hover border-0 shadow-sm">
-                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="News 1">
+                        <img src="news-images/planning-permission.jpg" class="card-img-top" alt="News 1">
                         <div class="card-body">
-                            <span class="badge bg-secondary-yellow text-dark mb-2">Tournament</span>
-                            <h5 class="card-title">Summer Championship Results</h5>
-                            <p class="card-text text-muted">June 15, 2023</p>
-                            <p class="card-text">Our club teams performed exceptionally well in the regional summer championships...</p>
-                            <a href="news.html#summer-championship" class="btn btn-sm btn-outline-primary">Read More</a>
+                            <span class="badge bg-secondary-yellow text-dark mb-2">Club</span>
+                            <h5 class="card-title">Club Development</h5>
+                            <p class="card-text text-muted">Dec 12, 2025</p>
+                            <p class="card-text">Plans to extend the facilities are underway as our planning application has been lodged...</p>
+                            <a href="planning-permission.html" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 card-hover border-0 shadow-sm">
-                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="News 2">
+                        <img src="img/main-draw.jpg" class="card-img-top" alt="News 2">
                         <div class="card-body">
                             <span class="badge bg-secondary-yellow text-dark mb-2">Event</span>
-                            <h5 class="card-title">Junior Development Program</h5>
-                            <p class="card-text text-muted">May 28, 2023</p>
-                            <p class="card-text">We're launching a new junior development program for players aged 8-16 starting next month...</p>
-                            <a href="news.html#junior-program" class="btn btn-sm btn-outline-primary">Read More</a>
+                            <h5 class="card-title">Bi-Weekly Lotto</h5>
+                            <p class="card-text text-muted">May 28, 2025</p>
+                            <p class="card-text">Check out the results of our bi-weekly club lottery...</p>
+                            <a href="lotto.html" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -229,16 +270,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h5 class="text-uppercase text-secondary-yellow mb-4">PowerHandball Club</h5>
-                    <p>123 Sports Avenue<br>Cityville, ST 12345<br>Phone: (555) 123-4567<br>Email: info@powerhandball.com</p>
+                    <h5 class="text-uppercase text-secondary-yellow mb-4">Carrick-on-Suir Handball Club</h5>
+                    <p>Clonmel Rd<br>Carrick-on-Suir<br>Co Tipperary<br>Phone: (555) 123-4567<br>Email: info@handball.com</p>
                     <div class="mt-4">
                         <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+<!--                         <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a> -->
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-4 mb-4 mb-lg-0">
                     <h5 class="text-uppercase text-secondary-yellow mb-4">Quick Links</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
@@ -249,7 +290,7 @@
                         <li><a href="contact.html" class="text-white">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-4 mb-4 mb-lg-0">
                     <h5 class="text-uppercase text-secondary-yellow mb-4">Opening Hours</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2">Monday-Friday: 6am - 10pm</li>
@@ -257,26 +298,18 @@
                         <li>Sunday: 8am - 8pm</li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-uppercase text-secondary-yellow mb-4">Newsletter</h5>
-                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                    <form>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
-                            <button class="btn btn-secondary-yellow text-dark" type="button">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+
+               
+
             <hr class="my-4 bg-light">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2023 PowerHandball Club. All rights reserved.</p>
+                    <p class="mb-0">&copy; Carrick-on-Suir Handball Club. All rights reserved.</p>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
+               <!--  <div class="col-md-6 text-center text-md-end">
                     <a href="#" class="text-white me-3">Privacy Policy</a>
                     <a href="#" class="text-white">Terms of Use</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>

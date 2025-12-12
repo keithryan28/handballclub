@@ -63,7 +63,36 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        
+        /* Remove default arrow */
+        .nav-item.dropdown .nav-link::after {
+            display: none !important;
+        }
+
+        /* Show dropdown on hover (desktop only) */
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+
+            }
+        }
+        /* Make dropdown links white */
+.dropdown-menu .dropdown-item {
+    color: white !important;
+}
+
+/* Keep background blue on hover and text white */
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
+}
+
+/* Ensure dropdown menu background matches nav */
+.dropdown-menu {
+    background-color: var(--primary-blue) !important;
+    border: none;
+}
+
         footer {
             background-color: var(--primary-blue);
             color: white;
@@ -72,193 +101,216 @@
             width: 100px;
         }
     </style>
+
+    <script>
+document.querySelectorAll('.dropdown').forEach(drop => {
+    drop.addEventListener('mouseover', function () {
+        if (window.innerWidth >= 992) {
+            let menu = this.querySelector('.dropdown-menu');
+            menu.classList.add('show');
+        }
+    });
+
+    drop.addEventListener('mouseleave', function () {
+        if (window.innerWidth >= 992) {
+            let menu = this.querySelector('.dropdown-menu');
+            menu.classList.remove('show');
+        }
+    });
+});
+</script>
+
 </head>
 <body>
     <!-- Navigation (same as index.html) -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue sticky-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="img/logo.png" alt="Club Logo" class="logo">
-                <span class="fw-bold">Handball & Racquetball</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link " href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="news.html">News</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="racquetball.html">Racquetball</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="book-court.html">Book Court</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="img/logo.png" alt="Club Logo" class="logo">
+            <span class="fw-bold"></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="handball.html">Handball</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="racquetball.html">Racquetball</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="news.html">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="membership.html">Membership</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="about.html" id="aboutDropdown">
+                        About
+                    </a>
+                    <ul class="dropdown-menu bg-primary-blue border-0" aria-labelledby="aboutDropdown">
+                        
+                     <li><a class="dropdown-item" href="lotto.html">Club Lotto</a></li>
+                    
+                    <li><a class="dropdown-item" href="facilities.html">Facilities</a></li>
+
+                    <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+               
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    
+    <!-- News Header -->
+ <!-- News List Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="fw-bold text-primary-blue mb-4">Latest News</h2>
+
+        <!-- PINNED NEWS ITEM -->
+        <div class="list-group mb-4">
+
+            <div class="list-group-item py-4 shadow-sm border-2" 
+                style="border-left: 6px solid var(--secondary-yellow); background-color: #fffef5;">
+                <div class="d-flex">
+                    <img src="img/main-draw.jpg" class="rounded me-3 shadow-sm" 
+                        style="width:180px; height:120px; object-fit:cover;" alt="Pinned News">
+
+                    <div class="flex-grow-1">
+                        <div class="mb-1">
+                            <span class="badge bg-secondary-yellow text-dark me-2">Pinned</span>
+                            <span class="text-muted small">January 25, 2025</span>
+                        </div>
+
+                        <h4 class="fw-bold text-primary-blue mb-2">Club Lotto Results</h4>
+
+                        <p class="text-muted">
+                            Our live draw can be viewed over on Facebook every second Sunday at 7pm. Thank you to all for your generous support of our club...
+                        </p>
+
+                        <div class="text-end">
+                            <a href="lotto.html" class="btn btn-sm bg-primary-blue text-white">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- STANDARD NEWS LIST -->
+        <div class="list-group">
+
+            <!-- News Item -->
+            <div class="list-group-item py-4">
+                <div class="d-flex">
+                    <img src="news-images/planning-permission.jpg" class="rounded me-3 shadow-sm" alt="Planning Permission"
+                        style="width:150px; height:100px; object-fit:cover;">
+                    <div class="flex-grow-1">
+                        <div class="mb-1">
+                            <span class="badge bg-secondary-yellow text-dark me-2">Announcement</span>
+                            <span class="text-muted small">June 15, 2023</span>
+                        </div>
+                        <h5 class="fw-bold text-primary-blue mb-1">Planning Permission</h5>
+                        <p class="mb-2 text-muted">The club has officially submitted planning permission for the new facility upgrades...</p>
+                        <div class="text-end">
+                            <a href="planning-permission.html" class="btn btn-sm bg-primary-blue text-white">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Item -->
+            <div class="list-group-item py-4">
+                <div class="d-flex">
+                    <img src="https://placehold.co/150x100" class="rounded me-3 shadow-sm" alt="Junior Program"
+                        style="width:150px; height:100px; object-fit:cover;">
+                    <div class="flex-grow-1">
+                        <div class="mb-1">
+                            <span class="badge bg-secondary-yellow text-dark me-2">Program</span>
+                            <span class="text-muted small">May 28, 2023</span>
+                        </div>
+                        <h5 class="fw-bold text-primary-blue mb-1">Junior Development Program Launch</h5>
+                        <p class="mb-2 text-muted">Our new youth coaching initiative will run weekly with structured training...</p>
+                        <div class="text-end">
+                            <a href="#" class="btn btn-sm bg-primary-blue text-white">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Item -->
+            <div class="list-group-item py-4">
+                <div class="d-flex">
+                    <img src="https://placehold.co/150x100" class="rounded me-3 shadow-sm" alt="Court Lighting"
+                        style="width:150px; height:100px; object-fit:cover;">
+                    <div class="flex-grow-1">
+                        <div class="mb-1">
+                            <span class="badge bg-secondary-yellow text-dark me-2">Facility</span>
+                            <span class="text-muted small">May 10, 2023</span>
+                        </div>
+                        <h5 class="fw-bold text-primary-blue mb-1">New Court Lighting Installed</h5>
+                        <p class="mb-2 text-muted">Our lighting upgrade is complete with new LED systems across all courts...</p>
+                        <div class="text-end">
+                            <a href="#" class="btn btn-sm bg-primary-blue text-white">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="py-5" style="background-color: var(--primary-blue); color: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-uppercase text-secondary-yellow mb-4">Carrick-on-Suir Handball Club</h5>
+                <p>Clonmel Rd<br>Carrick-on-Suir<br>Co Tipperary<br>Email: info@handball.com</p>
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-uppercase text-secondary-yellow mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                    <li class="mb-2"><a href="news.html" class="text-white">News</a></li>
+                    <li class="mb-2"><a href="racquetball.html" class="text-white">Racquetball</a></li>
+                    <li class="mb-2"><a href="book-court.html" class="text-white">Book Court</a></li>
+                    <li class="mb-2"><a href="about.html" class="text-white">About</a></li>
+                    <li><a href="contact.html" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5 class="text-uppercase text-secondary-yellow mb-4">Opening Hours</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">Monday-Friday: 6am - 10pm</li>
+                    <li class="mb-2">Saturday: 7am - 9pm</li>
+                    <li>Sunday: 8am - 8pm</li>
                 </ul>
             </div>
         </div>
-    </nav>
-    
-    <!-- News Header -->
-    <section class="py-5 bg-primary-blue text-white news-heading">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bold">Club News & Updates</h1>
-            <p class="lead">Stay informed about our latest events, tournaments, and club announcements</p>
-        </div>
-    </section>
 
-    <!-- Main News Content -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Featured News -->
-                    <article class="mb-5" id="summer-championship">
-                        <img src="https://placehold.co/800x400" alt="Summer Championship" class="img-fluid rounded mb-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <span class="badge bg-secondary-yellow text-dark me-2">Tournament</span>
-                            <span class="text-muted">June 15, 2023</span>
-                        </div>
-                        <h2 class="fw-bold text-primary-blue mb-3">Summer Championship Results</h2>
-                        <p>Our club teams performed exceptionally well in the regional summer championships held last weekend at the City Sports Complex.</p>
-                        <p>The men's team secured first place in Division A after a thrilling final match against City Rivals Club, winning 28-26. Captain Mark Johnson led the team with 9 goals, while goalkeeper Sam Wilson made several crucial saves in the final minutes.</p>
-                        <p>Our women's team also had a strong showing, finishing third in their division. Special mention goes to rookie player Lisa Chen who was named Most Promising Player of the tournament.</p>
-                        <p>The junior teams (U16 and U14) both reached the semifinals in their categories, demonstrating the strength of our youth development program.</p>
-                        <p>Congratulations to all players and coaches for their hard work and dedication!</p>
-                    </article>
-
-                    <!-- More News Articles -->
-                    <article class="mb-5 pb-5 border-bottom" id="junior-program">
-                        <img src="https://via.placeholder.com/800x400" alt="Junior Program" class="img-fluid rounded mb-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <span class="badge bg-secondary-yellow text-dark me-2">Program</span>
-                            <span class="text-muted">May 28, 2023</span>
-                        </div>
-                        <h2 class="fw-bold text-primary-blue mb-3">Junior Development Program Launch</h2>
-                        <p>We're excited to announce our new Junior Development Program for players aged 8-16, starting July 1st.</p>
-                        <p>The program will run every Saturday morning from 9am to 11am and will focus on:</p>
-                        <ul>
-                            <li>Fundamental handball skills</li>
-                            <li>Game strategy and tactics</li>
-                            <li>Physical conditioning</li>
-                            <li>Teamwork and sportsmanship</li>
-                        </ul>
-                        <p>The program will be led by our head coach, former national team player David Martinez, along with three assistant coaches. Spaces are limited to ensure quality instruction, so early registration is recommended.</p>
-                        <p>Registration fee: $150 for 8 sessions (2 months). Club members receive a 20% discount.</p>
-                    </article>
-
-                    <article class="mb-5 pb-5 border-bottom" id="court-lighting">
-                        <img src="https://via.placeholder.com/800x400" alt="Court Lighting" class="img-fluid rounded mb-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <span class="badge bg-secondary-yellow text-dark me-2">Facility</span>
-                            <span class="text-muted">May 10, 2023</span>
-                        </div>
-                        <h2 class="fw-bold text-primary-blue mb-3">New Court Lighting Installed</h2>
-                        <p>We're pleased to announce the completion of our court lighting upgrade project. All four courts now feature state-of-the-art LED lighting systems that provide:</p>
-                        <ul>
-                            <li>Brighter, more even illumination</li>
-                            <li>50% energy savings compared to our old system</li>
-                            <li>Adjustable brightness levels</li>
-                            <li>Flicker-free performance for better visibility</li>
-                        </ul>
-                        <p>The new lighting was funded through a combination of club reserves and generous donations from our sponsors. Special thanks to BrightLight Solutions for their professional installation.</p>
-                        <p>Members are invited to a special "Light Up the Night" event this Friday from 7-9pm to experience the new lighting system.</p>
-                    </article>
-                </div>
-                
-                <!-- Sidebar -->
-                <div class="col-lg-4">
-                    <div class="card mb-4">
-                        <div class="card-header bg-primary-blue text-white">
-                            <h5 class="mb-0">Upcoming Events</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-3 pb-3 border-bottom">
-                                <h6 class="fw-bold">Summer Tournament Series</h6>
-                                <p class="small text-muted mb-1">July 8-9, 2023</p>
-                                <p class="small">Annual club tournament open to all members.</p>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Register</a>
-                            </div>
-                            <div class="mb-3 pb-3 border-bottom">
-                                <h6 class="fw-bold">Coaching Clinic</h6>
-                                <p class="small text-muted mb-1">July 15, 2023</p>
-                                <p class="small">Free coaching clinic for all levels.</p>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
-                            </div>
-                            <div class="mb-3">
-                                <h6 class="fw-bold">Family Fun Day</h6>
-                                <p class="small text-muted mb-1">August 5, 2023</p>
-                                <p class="small">Games, food, and fun for the whole family.</p>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card mb-4">
-                        <div class="card-header bg-primary-blue text-white">
-                            <h5 class="mb-0">Recent News</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-3 pb-3 border-bottom">
-                                <h6 class="fw-bold">New Club Merchandise</h6>
-                                <p class="small text-muted mb-1">April 22, 2023</p>
-                                <a href="#" class="small">Check out our new club apparel...</a>
-                            </div>
-                            <div class="mb-3 pb-3 border-bottom">
-                                <h6 class="fw-bold">Winter League Champions</h6>
-                                <p class="small text-muted mb-1">March 18, 2023</p>
-                                <a href="#" class="small">Our teams dominate winter league...</a>
-                            </div>
-                            <div class="mb-3">
-                                <h6 class="fw-bold">Annual General Meeting</h6>
-                                <p class="small text-muted mb-1">February 10, 2023</p>
-                                <a href="#" class="small">Review of club achievements and plans...</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-header bg-primary-blue text-white">
-                            <h5 class="mb-0">Photo Gallery</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="row g-2">
-                                <div class="col-4">
-                                    <img src="https://via.placeholder.com/150" alt="Gallery 1" class="img-fluid rounded">
-                                </div>
-                                <div class="col-4">
-                                    <img src="https://via.placeholder.com/150" alt="Gallery 2" class="img-fluid rounded">
-                                </div>
-                                <div class="col-4">
-                                    <img src="https://via.placeholder.com/150" alt="Gallery 3" class="img-fluid rounded">
-                                </div>
-                                <div class="col-4">
-                                    <img src="https://via.placeholder.com/150" alt="Gallery 4" class="img-fluid rounded">
-                                </div>
-                                <div class="col-4">
-                                    <img src="https://via.placeholder.com/150" alt="Gallery 5" class="img-fluid rounded">
-                                </div>
-                                <div class="col-4">
-                                    <img src="https://via.placeholder.com/150" alt="Gallery 6" class="img-fluid rounded">
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-primary mt-3 w-100">View All Photos</a>
-                        </div>
-                    </div>
-                </div>
+        <hr class="my-4 bg-light">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">&copy; Carrick-on-Suir Handball Club. All rights reserved.</p>
             </div>
         </div>
-    </section>
+    </div>
+</footer>
 
     <!-- Footer (same as index.html) -->
         <!-- Bootstrap JS and dependencies -->
